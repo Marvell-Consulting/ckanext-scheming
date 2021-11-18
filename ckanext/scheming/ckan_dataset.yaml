@@ -10,7 +10,12 @@ dataset_fields:
     form_placeholder: eg. Summary Care Record - FHIR API
     required: true
 
-  - field_name: description
+  - field_name: name
+    label: URL
+    preset: dataset_slug
+    form_placeholder: eg. my-dataset
+
+  - field_name: notes
     label: Description
     form_snippet: markdown.html
     form_placeholder: A short description of the data or standard, e.g "Access patient's Summary Care Record (SCR), an electronic record of important patient information, using our FHIR API."
