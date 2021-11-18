@@ -62,7 +62,7 @@ You can install the extension with the following shell commands:
 ```sh
 cd $CKAN_VENV/src/
 
-pip install -e "git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming"
+pip install -e "git+https://github.com/Marvell-Consulting/ckanext-scheming.git#egg=ckanext-scheming"
 ```
 
 
