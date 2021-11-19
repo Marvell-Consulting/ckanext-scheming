@@ -53,53 +53,53 @@ dataset_fields:
     required: true
     preset: select
     choices:
-      - value: active
+      - value: Information Code Of Practice & Governance Standard
         label: Information Code Of Practice & Governance Standard
-      - value: draft
+      - value: Record Standard
         label: Record Standard
-      - value: deprecated
+      - value: Data Definitions & Terminologies
         label: Data Definitions & Terminologies
-      - value: retired
+      - value: Technical Standard
         label: Technical Standard
 
   - field_name: care_setting
     label: Care Setting
     preset: multiple_checkbox
     choices:
-      - value: community_health
+      - value: Community health
         label: Community health
-      - value: dentistry
+      - value: Dentistry
         label: Dentistry
-      - value: hospital
+      - value: Hospital
         label: Hospital
-      - value: maternity
+      - value: Maternity
         label: Maternity
-      - value: mental_health
+      - value: Mental Health
         label: Mental Health
-      - value: patient_citizen
+      - value: Patient / Citizen
         label: Patient / Citizen
-      - value: pharmacy
+      - value: Pharmacy
         label: Pharmacy
-      - value: gp_primary care
+      - value: GP / Primary Care
         label: GP / Primary Care
-      - value: transport_infrastructure social care
+      - value: Transport, Infrastructure, and Social care
         label: Transport, Infrastructure, and Social care
-      - value: urgent_and_mergency_care
+      - value: Urgent And Emergency Care
         label: Urgent And Emergency Care
 
   - field_name: procedure
     label: Procedure
     preset: multiple_checkbox
     choices:
-      - value: administration_bookings
+      - value: Administration and bookings
         label: Administration and bookings (Registrations, Appointments, Admissions and discharges, Referrals)
-      - value: medication
+      - value: Medication management
         label: Medication management (Prescribing, Dispensing, Vaccination)
-      - value: communications
+      - value: Messaging and notices
         label: Messaging and notices (Communications between care providers, Communications with patients)
-      - value: patient_info
+      - value: Patient information management
         label: Patient information management (Records management, Demographics data, Information sharing Reference data and directories)
-      - value: security
+      - value: Security
         label: Security (Secure logins, Electronic signatures, Identity verification and Cyber security alert feeds.)
 
   # Requires datastore and datapusher
