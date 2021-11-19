@@ -48,7 +48,7 @@ dataset_fields:
     help_text: List any related standards e.g. if the standard forms part of a broader package that users may wish to implement together
     form_placeholder: e.g. NHS Number, HA/GP Links
 
-  - field_name: type_of_standard
+  - field_name: standard_category
     label: Type of Standard
     required: true
     preset: select
