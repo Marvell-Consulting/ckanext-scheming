@@ -51,7 +51,7 @@ dataset_fields:
   - field_name: standard_category
     label: Type of Standard
     required: true
-    preset: select
+    preset: multiple_checkbox
     choices:
       - value: Information Code Of Practice & Governance Standard
         label: Information Code Of Practice & Governance Standard
