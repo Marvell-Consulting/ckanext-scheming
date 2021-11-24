@@ -15,13 +15,22 @@ dataset_fields:
     preset: dataset_slug
     form_placeholder: eg. my-dataset
 
-  - section_heading: About this standard
-    form_snippet: section_heading.html
-
   - field_name: notes
     label: Description
     form_snippet: markdown.html
     form_placeholder: A short description of the data or standard, e.g "Access patient's Summary Care Record (SCR), an electronic record of important patient information, using our FHIR API."
+
+  - section_heading: About this standard
+    form_snippet: section_heading.html
+
+  - field_name: owner_org
+    label: Organization
+    preset: dataset_organization
+    required: true
+
+  - field_name: approval_code
+    label: Approval Code
+    form_placeholder: e.g. ISB0000
 
   - field_name: status
     label: Status of Standard
@@ -37,20 +46,6 @@ dataset_fields:
       - value: retired
         label: Retired
 
-  - field_name: approval_code
-    label: Approval Code
-    form_placeholder: e.g. ISB0000
-
-  - field_name: dependencies
-    label: Dependencies
-    help_text: Any standards or services (e.g. SNOMED CT or the Patient Administration System) that must be implemented in order for this standard to work
-    form_placeholder: e.g. SNOMED
-
-  - field_name: related_standards
-    label: Related Standards
-    help_text: List any related standards e.g. if the standard forms part of a broader package that users may wish to implement together
-    form_placeholder: e.g. NHS Number, HA/GP Links
-
   - field_name: standard_category
     label: Type of Standard
     required: true
@@ -64,6 +59,38 @@ dataset_fields:
         label: Data Definitions & Terminologies
       - value: Technical Standard
         label: Technical Standard
+
+  - field_name: documentation_help_text
+    label: Documentation Help Text
+    form_snippet: markdown.html
+    form_placeholder: e.g. "The latest version of the standard documentation is available on the PRSB website"
+
+  - field_name: documentation_link
+    label: Link to Documentation
+    form_placeholder: e.g. https://theprsb.org/standards/mentalhealth/
+    required: true
+
+  - field_name: contact_details
+    label: Contact details
+    form_placeholder: e.g. support@theprsb.org
+
+  - section_heading: Business and care setting usage
+    form_snippet: section_heading.html
+
+  - field_name: business_use
+    label: Business Use
+    preset: multiple_checkbox
+    choices:
+      - value: Administration and bookings
+        label: Administration and bookings (Registrations, Appointments, Admissions and discharges, Referrals)
+      - value: Medication management
+        label: Medication management (Prescribing, Dispensing, Vaccination)
+      - value: Messaging and notices
+        label: Messaging and notices (Communications between care providers, Communications with patients)
+      - value: Patient information management
+        label: Patient information management (Records management, Demographics data, Information sharing Reference data and directories)
+      - value: Security
+        label: Security (Secure logins, Electronic signatures, Identity verification and Cyber security alert feeds.)
 
   - field_name: care_setting
     label: Care Setting
@@ -90,20 +117,34 @@ dataset_fields:
       - value: Urgent And Emergency Care
         label: Urgent And Emergency Care
 
-  - field_name: procedure
-    label: Procedure
-    preset: multiple_checkbox
-    choices:
-      - value: Administration and bookings
-        label: Administration and bookings (Registrations, Appointments, Admissions and discharges, Referrals)
-      - value: Medication management
-        label: Medication management (Prescribing, Dispensing, Vaccination)
-      - value: Messaging and notices
-        label: Messaging and notices (Communications between care providers, Communications with patients)
-      - value: Patient information management
-        label: Patient information management (Records management, Demographics data, Information sharing Reference data and directories)
-      - value: Security
-        label: Security (Secure logins, Electronic signatures, Identity verification and Cyber security alert feeds.)
+  - section_heading: Relationships to other standards
+    form_snippet: section_heading.html
+
+  - field_name: related_standards
+    label: Related Standards
+    help_text: List any related standards e.g. if the standard forms part of a broader package that users may wish to implement together
+    form_placeholder: e.g. NHS Number, HA/GP Links
+    preset: multiple_text
+
+  - field_name: dependencies
+    label: Dependencies
+    help_text: Any standards or services (e.g. SNOMED CT or the Patient Administration System) that must be implemented in order for this standard to work
+    form_placeholder: e.g. This standard requires access to a,b,c, and it is recommended to use d,e,f...
+    form_snippet: markdown.html
+
+  - section_heading: Assurance and endorsements
+    form_snippet: section_heading.html
+
+  - field_name: assurance
+    label: Assurance
+    form_placeholder: Under consideration by the [Data Alliance and Protection Board](http://www.example.com)
+    form_snippet: markdown.html
+
+  - field_name: endorsements
+    label: Endorsements
+    help_text: e.g. Association of Directors of Adult Social Services
+    preset: multiple_text
+
 
   # Requires datastore and datapusher
   # see e.g.https://github.com/okfn/docker-ckan-lacounts/commit/c5e750c0
@@ -132,44 +173,40 @@ dataset_fields:
   #   form_snippet: license.html
   #   help_text: License definitions and additional information can be found at http://opendefinition.org/
 
-  - field_name: owner_org
-    label: Organization
-    preset: dataset_organization
-
-  - field_name: url
-    label: Source
-    form_placeholder: http://example.com/dataset.json
-    display_property: foaf:homepage
-    display_snippet: link.html
+  # - field_name: url
+  #   label: Source
+  #   form_placeholder: http://example.com/dataset.json
+  #   display_property: foaf:homepage
+  #   display_snippet: link.html
 
   # - field_name: version
   #   label: Version
   #   validators: ignore_missing unicode package_version_validator
   #   form_placeholder: '1.0'
 
-  - field_name: author
-    label: Author
-    form_placeholder: Joe Bloggs
-    display_property: dc:creator
+  # - field_name: author
+  #   label: Author
+  #   form_placeholder: Joe Bloggs
+  #   display_property: dc:creator
 
-  - field_name: author_email
-    label: Author Email
-    form_placeholder: joe@example.com
-    display_property: dc:creator
-    display_snippet: email.html
-    display_email_name_field: author
+  # - field_name: author_email
+  #   label: Author Email
+  #   form_placeholder: joe@example.com
+  #   display_property: dc:creator
+  #   display_snippet: email.html
+  #   display_email_name_field: author
 
-  - field_name: maintainer
-    label: Maintainer
-    form_placeholder: Joe Bloggs
-    display_property: dc:contributor
+  # - field_name: maintainer
+  #   label: Maintainer
+  #   form_placeholder: Joe Bloggs
+  #   display_property: dc:contributor
 
-  - field_name: maintainer_email
-    label: Maintainer Email
-    form_placeholder: joe@example.com
-    display_property: dc:contributor
-    display_snippet: email.html
-    display_email_name_field: maintainer
+  # - field_name: maintainer_email
+  #   label: Maintainer Email
+  #   form_placeholder: joe@example.com
+  #   display_property: dc:contributor
+  #   display_snippet: email.html
+  #   display_email_name_field: maintainer
 
 resource_fields:
   - field_name: url
