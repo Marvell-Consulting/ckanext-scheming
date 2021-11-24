@@ -51,14 +51,14 @@ dataset_fields:
     required: true
     preset: multiple_checkbox
     choices:
-      - value: Information Code Of Practice & Governance Standard
-        label: Information Code Of Practice & Governance Standard
-      - value: Record Standard
-        label: Record Standard
-      - value: Data Definitions & Terminologies
-        label: Data Definitions & Terminologies
-      - value: Technical Standard
-        label: Technical Standard
+      - value: Information code of practice or governance standard
+        label: Information code of practice or governance standard
+      - value: Record standard
+        label: Record standard
+      - value: Data definitions or terminology standard
+        label: Data definitions or terminology standard
+      - value: Technical standard or API
+        label: Technical standard or API
 
   - field_name: documentation_help_text
     label: Documentation Help Text
@@ -81,16 +81,38 @@ dataset_fields:
     label: Business Use
     preset: multiple_checkbox
     choices:
-      - value: Administration and bookings
-        label: Administration and bookings (Registrations, Appointments, Admissions and discharges, Referrals)
-      - value: Medication management
-        label: Medication management (Prescribing, Dispensing, Vaccination)
-      - value: Messaging and notices
-        label: Messaging and notices (Communications between care providers, Communications with patients)
-      - value: Patient information management
-        label: Patient information management (Records management, Demographics data, Information sharing Reference data and directories)
+      - value: Appointment / scheduling
+        label: Appointment / scheduling
+      - value: Referrals
+        label: Referrals
+      - value: Access to records
+        label: Access to records
+      - value: Clinical decision support
+        label: Clinical decision support
+      - value: Continuity of care (ToC)
+        label: Continuity of care (ToC)
+      - value: Demographics
+        label: Demographics
+      - value: Key care information
+        label: Key care information
+      - value: Prescribing
+        label: Prescribing
+      - value: Dispensing
+        label: Dispensing
+      - value: Vaccination
+        label: Vaccination
+      - value: Messaging
+        label: Messaging
+      - value: Patient communication
+        label: Patient communication
+      - value: Reference data
+        label: Reference data
+      - value: Information governance
+        label: Information governance
       - value: Security
-        label: Security (Secure logins, Electronic signatures, Identity verification and Cyber security alert feeds.)
+        label: Security
+      - value: Tests and diagnostics
+        label: Tests and diagnostics
 
   - field_name: care_setting
     label: Care Setting
@@ -102,20 +124,26 @@ dataset_fields:
         label: Dentistry
       - value: Hospital
         label: Hospital
+      - value: Inpatient
+        label: Inpatient
+      - value: Outpatient
+        label: Outpatient
       - value: Maternity
         label: Maternity
-      - value: Mental Health
-        label: Mental Health
-      - value: Patient / Citizen
-        label: Patient / Citizen
+      - value: Mental health
+        label: Mental health
+      - value: Patient
+        label: Patient
       - value: Pharmacy
         label: Pharmacy
-      - value: GP / Primary Care
-        label: GP / Primary Care
-      - value: Transport, Infrastructure, and Social care
-        label: Transport, Infrastructure, and Social care
-      - value: Urgent And Emergency Care
-        label: Urgent And Emergency Care
+      - value: GP / Primary care
+        label: GP / Primary care
+      - value: Transport / Infrastructure
+        label: Transport / Infrastructure
+      - value: Social care
+        label: Social care
+      - value: Urgent and Emergency Care
+        label: Urgent and Emergency Care
 
   - section_heading: Relationships to other standards
     form_snippet: section_heading.html
@@ -144,7 +172,6 @@ dataset_fields:
     label: Endorsements
     help_text: e.g. Association of Directors of Adult Social Services
     preset: multiple_text
-
 
   # Requires datastore and datapusher
   # see e.g.https://github.com/okfn/docker-ckan-lacounts/commit/c5e750c0

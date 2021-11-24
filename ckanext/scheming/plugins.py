@@ -259,14 +259,15 @@ class SchemingDatasetsPlugin(p.SingletonPlugin, DefaultDatasetForm,
         composite_convert_fields = []
         for field_list, destination, convert_extras in fg:
             for f in field_list:
-                convert_this = convert_extras and f['field_name'] not in schema
-                destination[f['field_name']] = get_validators(
-                    f,
-                    scheming_schema,
-                    convert_this
-                )
-                if convert_this and 'repeating_subfields' in f:
-                    composite_convert_fields.append(f['field_name'])
+                if 'field_name' in f:
+                    convert_this = convert_extras and f['field_name'] not in schema
+                    destination[f['field_name']] = get_validators(
+                        f,
+                        scheming_schema,
+                        convert_this
+                    )
+                    if convert_this and 'repeating_subfields' in f:
+                        composite_convert_fields.append(f['field_name'])
 
         def composite_convert_to(key, data, errors, context):
             unflat = unflatten(data)
