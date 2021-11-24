@@ -48,6 +48,20 @@ Table of contents:
 
 
 
+Marvell Development Note
+========================
+
+To develop against this repository pull it into a separate working directory and then symlink it into your ckan build
+
+e.g.
+
+```
+$ ln -s ~/work/ckanext-scheming ~/work/ckan/src/ckanext-scheming
+# then install
+$ cd ~/work/ckan/src/ckanext-scheming
+$ python setup.py develop
+```
+
 Requirements
 ============
 
