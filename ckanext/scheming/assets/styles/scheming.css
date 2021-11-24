@@ -39,3 +39,7 @@ a.btn.btn-multiple-remove {
 .radio-group label {
   font-weight: normal;
 }
+
+.multiple-text-group {
+  padding-inline-start: 15px;
+}
