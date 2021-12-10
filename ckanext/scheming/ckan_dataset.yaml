@@ -28,8 +28,8 @@ dataset_fields:
     preset: dataset_organization
     required: true
 
-  - field_name: approval_code
-    label: Approval Code
+  - field_name: reference_code
+    label: Reference code
     form_placeholder: e.g. ISB0000
 
   - field_name: status
@@ -47,18 +47,18 @@ dataset_fields:
         label: Retired
 
   - field_name: standard_category
-    label: Type of Standard
+    label: Type of standard
     required: true
     preset: multiple_checkbox
     choices:
-      - value: Information code of practice or governance standard
-        label: Information code of practice or governance standard
+      - value: Information code of practice and governance standard
+      - value: Information code of practice and governance standard
       - value: Record standard
         label: Record standard
-      - value: Data definitions or terminology standard
-        label: Data definitions or terminology standard
-      - value: Technical standard or API
-        label: Technical standard or API
+      - value: Data definitions and terminologies
+        label: Data definitions and terminologies
+      - value: Technical standards and specifications
+        label: Technical standards and specifications
 
   - field_name: documentation_help_text
     label: Documentation Help Text
@@ -115,7 +115,7 @@ dataset_fields:
         label: Tests and diagnostics
 
   - field_name: care_setting
-    label: Care Setting
+    label: Care setting
     preset: multiple_checkbox
     choices:
       - value: Community health
@@ -124,10 +124,6 @@ dataset_fields:
         label: Dentistry
       - value: Hospital
         label: Hospital
-      - value: Inpatient
-        label: Inpatient
-      - value: Outpatient
-        label: Outpatient
       - value: Maternity
         label: Maternity
       - value: Mental health
@@ -149,10 +145,10 @@ dataset_fields:
     form_snippet: section_heading.html
 
   - field_name: related_standards
-    label: Related Standards
+    label: Related standards
     help_text: List any related standards e.g. if the standard forms part of a broader package that users may wish to implement together
     form_placeholder: e.g. NHS Number, HA/GP Links
-    preset: multiple_text
+    form_snippet: markdown.html
 
   - field_name: dependencies
     label: Dependencies
