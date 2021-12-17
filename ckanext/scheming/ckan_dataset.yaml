@@ -52,7 +52,7 @@ dataset_fields:
     preset: multiple_checkbox
     choices:
       - value: Information code of practice and governance standard
-      - value: Information code of practice and governance standard
+        label: Information code of practice and governance standard
       - value: Record standard
         label: Record standard
       - value: Data definitions and terminologies
@@ -167,7 +167,7 @@ dataset_fields:
   - field_name: endorsements
     label: Endorsements
     help_text: e.g. Association of Directors of Adult Social Services
-    preset: multiple_text
+    form_snippet: markdown.html
 
   # Requires datastore and datapusher
   # see e.g.https://github.com/okfn/docker-ckan-lacounts/commit/c5e750c0
@@ -232,19 +232,22 @@ dataset_fields:
   #   display_email_name_field: maintainer
 
 resource_fields:
+  - section_heading: Add additional links?
+    form_snippet: section_heading.html
+
   - field_name: url
     label: URL
-    preset: resource_url_upload
+    form_snippet: hack_whitespace_default.html
+    help_text: This can be skipped unless you want to add an additional documentation link
+  # - field_name: name
+  #   label: Name
+  #   form_placeholder: eg. January 2011 Gold Prices
 
-  - field_name: name
-    label: Name
-    form_placeholder: eg. January 2011 Gold Prices
+  # - field_name: description
+  #   label: Description
+  #   form_snippet: markdown.html
+  #   form_placeholder: Some useful notes about the data
 
-  - field_name: description
-    label: Description
-    form_snippet: markdown.html
-    form_placeholder: Some useful notes about the data
-
-  - field_name: format
-    label: Format
-    preset: resource_format_autocomplete
+  # - field_name: format
+  #   label: Format
+  #   preset: resource_format_autocomplete
