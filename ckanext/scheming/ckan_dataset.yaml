@@ -169,6 +169,12 @@ dataset_fields:
     help_text: e.g. Association of Directors of Adult Social Services
     form_snippet: markdown.html
 
+  - field_name: tag_string
+    label: Additional Tags
+    preset: tag_string_autocomplete
+    form_placeholder: e.g. reviewable, needs update, healtcare, FHIR only
+
+
   # Requires datastore and datapusher
   # see e.g.https://github.com/okfn/docker-ckan-lacounts/commit/c5e750c0
   # and https://docs.ckan.org/en/2.9/maintaining/datastore.html
@@ -185,11 +191,6 @@ dataset_fields:
   #       label: None
   #     - value: na
   #       label: N/A
-
-  # - field_name: tag_string
-  #   label: Tags
-  #   preset: tag_string_autocomplete
-  #   form_placeholder: eg. economy, mental health, government
 
   # - field_name: license_id
   #   label: License
