@@ -57,32 +57,10 @@ dataset_fields:
     validators: boolean_validator
     output_validators: boolean_validator
 
-  - field_name: status
-    label: Status of standard
-    required: true
-    preset: select
-    choices:
-      # Published statuses
-      # We keep active at the top, as ckan will default to the first option when it can't find a value. As most of our standards *are* active, we chose this!
-      - value: active
-        label: Active
-      - value: in-development
-        label: In development
-      - value: deprecated
-        label: Deprecated
-      - value: retired
-        label: Retired
-      # Unpublished statuses
-      - value: proposed
-        label: Proposed
-      - value: draft-in-progress
-        label: Draft in progress
-      - value: awaiting-approval
-        label: Awaiting approval
-      - value: on-hold
-        label: On hold
-      - value: cancelled
-        label: Cancelled
+  - field_name: version
+    label: Version
+    validators: ignore_missing unicode_safe package_version_validator
+    form_placeholder: "1.0"
 
   - field_name: publication_due_date
     label: Publication due
