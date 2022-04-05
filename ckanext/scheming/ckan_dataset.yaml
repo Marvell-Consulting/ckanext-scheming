@@ -74,11 +74,11 @@ dataset_fields:
     label: Contact details
     form_placeholder: e.g. support@theprsb.org
 
-  - section_heading: Business and care setting usage
+  - section_heading: Topic and care setting
     form_snippet: section_heading.html
 
-  - field_name: business_use
-    label: Business Use
+  - field_name: topic
+    label: Topic
     preset: multiple_checkbox
     choices:
       - value: Appointment / scheduling
