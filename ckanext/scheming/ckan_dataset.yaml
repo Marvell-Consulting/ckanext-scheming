@@ -38,9 +38,9 @@ dataset_fields:
     preset: select
     choices:
     - value: false
-      label: No
+      label: "No"
     - value: true
-      label: Yes
+      label: "Yes"
     validators: boolean_validator
 
   - field_name: status
