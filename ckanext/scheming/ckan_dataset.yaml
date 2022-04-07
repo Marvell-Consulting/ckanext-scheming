@@ -32,6 +32,17 @@ dataset_fields:
     label: Reference code
     form_placeholder: e.g. ISB0000
 
+  - field_name: mandated
+    label: Nationally Mandated
+    required: true
+    preset: select
+    choices:
+    - value: false
+      label: No
+    - value: true
+      label: Yes
+    validators: boolean_validator
+
   - field_name: status
     label: Status of standard
     required: true
