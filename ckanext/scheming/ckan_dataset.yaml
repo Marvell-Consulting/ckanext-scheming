@@ -58,14 +58,14 @@ dataset_fields:
         label: Retired
 
   - field_name: standard_category
-    label: Type of standard
+    label: Type
     required: true
     preset: select
     choices:
-      - value: Information code of practice and governance standard
-        label: Information code of practice and governance standard
-      - value: Record standard
-        label: Record standard
+      - value: Information codes of practice
+        label: Information codes of practice
+      - value: Record standards
+        label: Record standards
       - value: Data definitions and terminologies
         label: Data definitions and terminologies
       - value: Technical standards and specifications
