@@ -32,15 +32,27 @@ dataset_fields:
     label: Reference code
     form_placeholder: e.g. ISB0000
 
+  - field_name: is_published_standard
+    label: Has the standard been published?
+    help_text: Standards which have not yet been published will appear on the roadmap page
+    required: true
+    preset: select
+    choices:
+      - value: true
+        label: "Yes"
+      - value: false
+        label: "No"
+    validators: boolean_validator
+
   - field_name: mandated
     label: Nationally Mandated
     required: true
     preset: select
     choices:
-    - value: false
-      label: "No"
-    - value: true
-      label: "Yes"
+      - value: false
+        label: "No"
+      - value: true
+        label: "Yes"
     validators: boolean_validator
 
   - field_name: status
@@ -56,6 +68,28 @@ dataset_fields:
         label: Deprecated
       - value: retired
         label: Retired
+      - value: awaiting
+        label: Awaiting approval
+      - value: proposed
+        label: Proposed
+      - value: discontinued
+        label: Not progressed
+
+  - field_name: publication_due_date
+    label: Publication due
+    preset: date
+
+  - field_name: implementation_from_date
+    label: Implement from
+    preset: date
+
+  - field_name: comply_by_date
+    label: Comply by
+    preset: date
+
+  - field_name: submit_feedback
+    label: Submit feedback
+    form_placeholder: Feedback can be submitted via https://theprsb.org/standards/mentalhealth/ until the 30th of June 2022
 
   - field_name: standard_category
     label: Type
@@ -184,7 +218,6 @@ dataset_fields:
     label: Additional Tags
     preset: tag_string_autocomplete
     form_placeholder: e.g. reviewable, needs update, healtcare, FHIR only
-
 
   # Requires datastore and datapusher
   # see e.g.https://github.com/okfn/docker-ckan-lacounts/commit/c5e750c0
