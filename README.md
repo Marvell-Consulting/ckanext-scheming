@@ -364,8 +364,8 @@ choice will be selected in the form by default.
 =======
 >>>>>>> 39f589e (clean up readme)
 =======
+<<<<<<< HEAD
 >>>>>>> 6081181 (clean up readme)
->>>>>>> 8fee6df (clean up readme)
 ### `choices_helper`
 
 If a choices list is not provided you must provide a `choices_helper`
