@@ -20,7 +20,7 @@ Table of contents:
    - [Dataset Schema Keys](#dataset-schema-keys)
      - [`dataset_type`](#dataset_type)
      - [`dataset_fields`, `resource_fields`](#dataset_fields-resource_fields)
-   - [Group / Organization Schema Keys](#group--organization-schema-keys)
+   - [Group / Organization Schema Keys](#group-organization-schema-keys)
      - [`group_type`](#group_type)
      - [`organization_type`](#organization_type)
      - [`fields`](#fields)
@@ -324,15 +324,6 @@ choices:
 - value: hybrid
   label: Hybrid Camel
 ```
-
-For required `select` fields you may also want to add
-
-```yaml
-form_include_blank_choice: true
-```
-
-so that users are forced to choose an item in the form, otherwise the first
-choice will be selected in the form by default.
 
 ### `choices_helper`
 
