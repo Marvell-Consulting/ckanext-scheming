@@ -9,44 +9,47 @@ and display are supported.
 
 Table of contents:
 
-1. [Requirements](#requirements)
-2. [Installation](#installation)
-3. [Configuration](#configuration)
-   - [Schema Types](#schema-types)
-   - [Example Schemas](#example-schemas)
-   - [Common Schema Keys](#common-schema-keys)
-     - [`scheming_version`](#scheming_version)
-     - [`about_url`](#about_url)
-   - [Dataset Schema Keys](#dataset-schema-keys)
-     - [`dataset_type`](#dataset_type)
-     - [`dataset_fields`, `resource_fields`](#dataset_fields-resource_fields)
-   - [Group / Organization Schema Keys](#group-organization-schema-keys)
-     - [`group_type`](#group_type)
-     - [`organization_type`](#organization_type)
-     - [`fields`](#fields)
-   - [Field Keys](#field-keys)
-     - [`field_name`](#field_name)
-     - [`label`](#label)
-     - [`repeating_subfields`](#repeating_subfields)
-     - [`required`](#required)
-     - [`choices`](#choices)
-     - [`choices_helper`](#choices_helper)
-     - [`preset`](#preset)
-     - [`form_snippet`](#form_snippet)
-     - [`display_snippet`](#display_snippet)
-     - [`display_property`](#display_property)
-     - [`select_size`](#select_size)
-     - [`sorted_choices`](#sorted_choices)
-     - [`validators`](#validators)
-     - [`output_validators`](#output_validators)
-     - [`create_validators`](#create_validators)
-     - [`help_text`](#help_text)
-     - [`help_allow_html`](#help_allow_html)
-     - [`help_inline`](#help_inline)
-4. [Action API Endpoints](#action-api-endpoints)
-5. [Running the Tests](#running-the-tests)
+- [ckanext-scheming](#ckanext-scheming)
+- [Marvell Development Note](#marvell-development-note)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+  - [Schema Types](#schema-types)
+  - [Example Schemas](#example-schemas)
+  - [Common Schema Keys](#common-schema-keys)
+    - [`scheming_version`](#scheming_version)
+    - [`about_url`](#about_url)
+  - [Dataset Schema Keys](#dataset-schema-keys)
+    - [`dataset_type`](#dataset_type)
+    - [`dataset_fields`, `resource_fields`](#dataset_fields-resource_fields)
+  - [Group / Organization Schema Keys](#group--organization-schema-keys)
+    - [`group_type`](#group_type)
+    - [`organization_type`](#organization_type)
+    - [`fields`](#fields)
+  - [Field Keys](#field-keys)
+    - [`field_name`](#field_name)
+    - [`label`](#label)
+    - [`repeating_subfields`](#repeating_subfields)
+    - [`required`](#required)
+    - [`choices`](#choices)
+    - [`choices_helper`](#choices_helper)
+    - [`preset`](#preset)
+    - [`form_snippet`](#form_snippet)
+    - [`display_snippet`](#display_snippet)
+    - [`display_property`](#display_property)
+    - [`select_size`](#select_size)
+    - [`sorted_choices`](#sorted_choices)
+    - [`validators`](#validators)
+    - [`output_validators`](#output_validators)
+    - [`create_validators`](#create_validators)
+    - [`help_text`](#help_text)
+    - [`help_allow_html`](#help_allow_html)
+    - [`help_inline`](#help_inline)
+- [Action API Endpoints](#action-api-endpoints)
+- [Running the Tests](#running-the-tests)
 
 
+<<<<<<< HEAD
 
 Marvell Development Note
 ========================
@@ -61,6 +64,8 @@ $ ln -s ~/work/ckanext-scheming ~/work/ckan/src/ckanext-scheming
 $ cd ~/work/ckan/src/ckanext-scheming
 $ python setup.py develop
 ```
+=======
+>>>>>>> 39f589e (clean up readme)
 
 Requirements
 ============
@@ -325,6 +330,18 @@ choices:
   label: Hybrid Camel
 ```
 
+<<<<<<< HEAD
+For required `select` fields you may also want to add
+
+```yaml
+form_include_blank_choice: true
+```
+
+so that users are forced to choose an item in the form, otherwise the first
+choice will be selected in the form by default.
+
+=======
+>>>>>>> 39f589e (clean up readme)
 ### `choices_helper`
 
 If a choices list is not provided you must provide a `choices_helper`
