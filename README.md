@@ -32,6 +32,7 @@ Table of contents:
     - [`repeating_subfields`](#repeating_subfields)
     - [`required`](#required)
     - [`choices`](#choices)
+- [>>>>>>> 39f589e (clean up readme)](#-39f589e-clean-up-readme)
     - [`choices_helper`](#choices_helper)
     - [`preset`](#preset)
     - [`form_snippet`](#form_snippet)
@@ -327,6 +328,7 @@ choices:
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 For required `select` fields you may also want to add
 
 ```yaml
@@ -336,6 +338,8 @@ form_include_blank_choice: true
 so that users are forced to choose an item in the form, otherwise the first
 choice will be selected in the form by default.
 
+=======
+>>>>>>> 39f589e (clean up readme)
 =======
 >>>>>>> 39f589e (clean up readme)
 ### `choices_helper`
