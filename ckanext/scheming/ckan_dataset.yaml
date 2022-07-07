@@ -92,7 +92,7 @@ dataset_fields:
     form_placeholder: Feedback can be submitted via https://theprsb.org/standards/mentalhealth/ until the 30th of June 2022
 
   - field_name: standard_category
-    label: Type
+    label: Standard type
     required: true
     preset: select
     choices:
