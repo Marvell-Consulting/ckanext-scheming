@@ -38,10 +38,10 @@ dataset_fields:
     required: true
     preset: select
     choices:
-      - value: true
-        label: "Yes"
       - value: false
         label: "No"
+      - value: true
+        label: "Yes"
     validators: boolean_validator
 
   - field_name: mandated
@@ -113,7 +113,7 @@ dataset_fields:
   - field_name: documentation_link
     label: Link to Documentation
     form_placeholder: e.g. https://theprsb.org/standards/mentalhealth/
-    required: true
+    # required: true
 
   - field_name: contact_details
     label: Contact details
