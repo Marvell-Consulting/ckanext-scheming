@@ -15,7 +15,7 @@ dataset_fields:
     preset: dataset_slug
     form_placeholder: eg. my-dataset
 
-  - field_name: notes
+  - field_name: description
     label: Description
     form_snippet: markdown.html
     form_placeholder: A short description of the data or standard, e.g "Access patient's Summary Care Record (SCR), an electronic record of important patient information, using our FHIR API."
@@ -36,7 +36,7 @@ dataset_fields:
     label: Has the standard been published?
     help_text: Standards which have not yet been published will appear on the roadmap page
     required: true
-    preset: select
+    preset: select_boolean
     choices:
       - value: false
         label: "No"
@@ -47,7 +47,7 @@ dataset_fields:
   - field_name: mandated
     label: Nationally Mandated
     required: true
-    preset: select
+    preset: select_boolean
     choices:
       - value: false
         label: "No"
