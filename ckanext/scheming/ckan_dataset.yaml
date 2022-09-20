@@ -58,12 +58,14 @@ dataset_fields:
   - field_name: status
     label: Status of standard
     required: true
-    preset: select
+    preset: multiple_checkbox
     choices:
       - value: active
         label: Active
-      - value: draft
-        label: Draft
+      - value: in_development
+        label: In Development
+      - value: draft_in_progress
+        label: Draft in progress
       - value: deprecated
         label: Deprecated
       - value: retired
@@ -72,8 +74,10 @@ dataset_fields:
         label: Awaiting approval
       - value: proposed
         label: Proposed
+      - value: on_hold
+        label: On Hold
       - value: discontinued
-        label: Not progressed
+        label: Cancelled
 
   - field_name: publication_due_date
     label: Publication due
