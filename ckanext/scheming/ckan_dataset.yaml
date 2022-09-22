@@ -62,19 +62,19 @@ dataset_fields:
     choices:
       - value: active
         label: Active
-      - value: in_development
+      - value: In Development
         label: In Development
-      - value: draft_in_progress
+      - value: Draft in progress
         label: Draft in progress
       - value: deprecated
         label: Deprecated
       - value: retired
         label: Retired
-      - value: awaiting
+      - value: Awaiting approval
         label: Awaiting approval
       - value: proposed
         label: Proposed
-      - value: on_hold
+      - value: On Hold
         label: On Hold
       - value: discontinued
         label: Cancelled
