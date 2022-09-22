@@ -58,7 +58,7 @@ dataset_fields:
   - field_name: status
     label: Status of standard
     required: true
-    preset: multiple_checkbox
+    preset: select
     choices:
       - value: active
         label: Active
