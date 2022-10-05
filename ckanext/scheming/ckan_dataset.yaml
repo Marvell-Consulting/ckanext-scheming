@@ -60,23 +60,25 @@ dataset_fields:
     required: true
     preset: select
     choices:
+      # Published statuses
+      - value: in-development
+        label: In development
       - value: active
         label: Active
-      - value: In Development
-        label: In Development
-      - value: Draft in progress
-        label: Draft in progress
       - value: deprecated
         label: Deprecated
       - value: retired
         label: Retired
-      - value: Awaiting approval
+      # Unpublished statuses
+      - value: draft-in-progress
+        label: Draft in progress
+      - value: awaiting-approval
         label: Awaiting approval
       - value: proposed
         label: Proposed
-      - value: On Hold
-        label: On Hold
-      - value: discontinued
+      - value: on-hold
+        label: On hold
+      - value: cancelled
         label: Cancelled
 
   - field_name: publication_due_date
