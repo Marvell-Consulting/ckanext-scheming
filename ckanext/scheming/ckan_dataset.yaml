@@ -61,21 +61,22 @@ dataset_fields:
     preset: select
     choices:
       # Published statuses
-      - value: in-development
-        label: In development
+      # We keep active at the top, as ckan will default to the first option when it can't find a value. As most of our standards *are* active, we chose this!
       - value: active
         label: Active
+      - value: in-development
+        label: In development
       - value: deprecated
         label: Deprecated
       - value: retired
         label: Retired
       # Unpublished statuses
+      - value: proposed
+        label: Proposed
       - value: draft-in-progress
         label: Draft in progress
       - value: awaiting-approval
         label: Awaiting approval
-      - value: proposed
-        label: Proposed
       - value: on-hold
         label: On hold
       - value: cancelled
