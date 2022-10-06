@@ -36,24 +36,26 @@ dataset_fields:
     label: Has the standard been published?
     help_text: Standards which have not yet been published will appear on the roadmap page
     required: true
-    preset: select_boolean
+    preset: select
     choices:
       - value: false
         label: "No"
       - value: true
         label: "Yes"
     validators: boolean_validator
+    output_validators: boolean_validator
 
   - field_name: mandated
     label: Nationally Mandated
     required: true
-    preset: select_boolean
+    preset: select
     choices:
       - value: false
         label: "No"
       - value: true
         label: "Yes"
     validators: boolean_validator
+    output_validators: boolean_validator
 
   - field_name: status
     label: Status of standard
