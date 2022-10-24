@@ -98,7 +98,7 @@ dataset_fields:
   - field_name: standard_category
     label: Standard type
     required: true
-    preset: select
+    preset: multiple_checkbox
     choices:
       - value: Information codes of practice
         label: Information codes of practice
