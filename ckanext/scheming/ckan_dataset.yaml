@@ -10,6 +10,11 @@ dataset_fields:
     form_placeholder: eg. Summary Care Record - FHIR API
     required: true
 
+  - field_name: name
+    label: URL
+    preset: dataset_slug
+    form_placeholder: eg. my-dataset
+
   - field_name: description
     label: Description
     form_snippet: markdown.html
