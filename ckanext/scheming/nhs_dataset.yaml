@@ -1,0 +1,307 @@
+scheming_version: 2
+dataset_type: dataset
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+dataset_fields:
+  - field_name: title
+    label: Title
+    preset: title
+    form_placeholder: eg. Summary Care Record - FHIR API
+    required: true
+
+  - field_name: name
+    label: URL
+    preset: dataset_slug
+    form_placeholder: eg. my-dataset
+
+  - field_name: description
+    label: Description
+    form_snippet: markdown.html
+    form_placeholder: A short description of the data or standard, e.g "Access patient's Summary Care Record (SCR), an electronic record of important patient information, using our FHIR API."
+
+  - section_heading: About this standard
+    form_snippet: section_heading.html
+
+  - field_name: owner_org
+    label: Organization
+    preset: dataset_organization
+    required: true
+
+  - field_name: reference_code
+    label: Reference code
+    form_placeholder: e.g. ISB0000
+
+  - field_name: is_published_standard
+    label: Has the standard been published?
+    help_text: Standards which have not yet been published will appear on the roadmap page
+    required: true
+    preset: select
+    choices:
+      - value: false
+        label: "No"
+      - value: true
+        label: "Yes"
+    validators: boolean_validator
+    output_validators: boolean_validator
+
+  - field_name: mandated
+    label: Nationally Mandated
+    required: true
+    preset: select
+    choices:
+      - value: false
+        label: "No"
+      - value: true
+        label: "Yes"
+    validators: boolean_validator
+    output_validators: boolean_validator
+
+  - field_name: status
+    label: Status of standard
+    required: true
+    preset: select
+    choices:
+      # Published statuses
+      # We keep active at the top, as ckan will default to the first option when it can't find a value. As most of our standards *are* active, we chose this!
+      - value: active
+        label: Active
+      - value: in-development
+        label: In development
+      - value: deprecated
+        label: Deprecated
+      - value: retired
+        label: Retired
+      # Unpublished statuses
+      - value: proposed
+        label: Proposed
+      - value: draft-in-progress
+        label: Draft in progress
+      - value: awaiting-approval
+        label: Awaiting approval
+      - value: on-hold
+        label: On hold
+      - value: cancelled
+        label: Cancelled
+
+  - field_name: publication_due_date
+    label: Publication due
+    preset: date
+
+  - field_name: implementation_from_date
+    label: Implement from
+    preset: date
+
+  - field_name: comply_by_date
+    label: Comply by
+    preset: date
+
+  - field_name: submit_feedback
+    label: Submit feedback
+    form_placeholder: Feedback can be submitted via https://theprsb.org/standards/mentalhealth/ until the 30th of June 2022
+
+  - field_name: standard_category
+    label: Standard type
+    required: true
+    preset: multiple_checkbox
+    choices:
+      - value: Information codes of practice
+        label: Information codes of practice
+      - value: Record standards
+        label: Record standards
+      - value: Data definitions and terminologies
+        label: Data definitions and terminologies
+      - value: Technical standards and specifications
+        label: Technical standards and specifications
+
+  - field_name: documentation_help_text
+    label: Documentation Help Text
+    form_snippet: markdown.html
+    form_placeholder: e.g. "The latest version of the standard documentation is available on the PRSB website"
+
+  - field_name: documentation_link
+    label: Link to Documentation
+    form_placeholder: e.g. https://theprsb.org/standards/mentalhealth/
+    # required: true
+
+  - field_name: contact_details
+    label: Contact details
+    form_placeholder: e.g. support@theprsb.org
+
+  - section_heading: Topic and care setting
+    form_snippet: section_heading.html
+
+  - field_name: topic
+    label: Topic
+    preset: multiple_checkbox
+    choices:
+      - value: Appointment / scheduling
+        label: Appointment / scheduling
+      - value: Referrals
+        label: Referrals
+      - value: Access to records
+        label: Access to records
+      - value: Clinical decision support
+        label: Clinical decision support
+      - value: Continuity of care (ToC)
+        label: Continuity of care (ToC)
+      - value: Demographics
+        label: Demographics
+      - value: Key care information
+        label: Key care information
+      - value: Prescribing
+        label: Prescribing
+      - value: Dispensing
+        label: Dispensing
+      - value: Vaccination
+        label: Vaccination
+      - value: Messaging
+        label: Messaging
+      - value: Patient communication
+        label: Patient communication
+      - value: Reference data
+        label: Reference data
+      - value: Information governance
+        label: Information governance
+      - value: Security
+        label: Security
+      - value: Tests and diagnostics
+        label: Tests and diagnostics
+
+  - field_name: care_setting
+    label: Care setting
+    preset: multiple_checkbox
+    choices:
+      - value: Community health
+        label: Community health
+      - value: Dentistry
+        label: Dentistry
+      - value: Hospital
+        label: Hospital
+      - value: Maternity
+        label: Maternity
+      - value: Mental health
+        label: Mental health
+      - value: Patient
+        label: Patient
+      - value: Pharmacy
+        label: Pharmacy
+      - value: GP / Primary care
+        label: GP / Primary care
+      - value: Transport / Infrastructure
+        label: Transport / Infrastructure
+      - value: Social care
+        label: Social care
+      - value: Urgent and Emergency Care
+        label: Urgent and Emergency Care
+
+  - section_heading: Relationships to other standards
+    form_snippet: section_heading.html
+
+  - field_name: related_standards
+    label: Related standards
+    help_text: List any related standards e.g. if the standard forms part of a broader package that users may wish to implement together
+    form_placeholder: e.g. NHS Number, HA/GP Links
+    form_snippet: markdown.html
+
+  - field_name: dependencies
+    label: Dependencies
+    help_text: Any standards or services (e.g. SNOMED CT or the Patient Administration System) that must be implemented in order for this standard to work
+    form_placeholder: e.g. This standard requires access to a,b,c, and it is recommended to use d,e,f...
+    form_snippet: markdown.html
+
+  - section_heading: Assurance and endorsements
+    form_snippet: section_heading.html
+
+  - field_name: assurance
+    label: Assurance
+    form_placeholder: Under consideration by the [Data Alliance and Protection Board](http://www.example.com)
+    form_snippet: markdown.html
+
+  - field_name: endorsements
+    label: Endorsements
+    help_text: e.g. Association of Directors of Adult Social Services
+    form_snippet: markdown.html
+
+  - field_name: tag_string
+    label: Additional Tags
+    preset: tag_string_autocomplete
+    form_placeholder: e.g. reviewable, needs update, healtcare, FHIR only
+
+  # Requires datastore and datapusher
+  # see e.g.https://github.com/okfn/docker-ckan-lacounts/commit/c5e750c0
+  # and https://docs.ckan.org/en/2.9/maintaining/datastore.html
+  # - field_name: notsure
+  #   label: What is datastore choices
+  #   preset: select
+  #   choices_helper: scheming_datastore_choices
+  #   datastore_choices_resource: countries-resource-id-or-alias
+  #   datastore_choices_columns:
+  #     - value: Country Code
+  #       label: English Country Name
+  #   datastore_additional_choices:
+  #     - value: none
+  #       label: None
+  #     - value: na
+  #       label: N/A
+
+  # - field_name: license_id
+  #   label: License
+  #   form_snippet: license.html
+  #   help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+  # - field_name: url
+  #   label: Source
+  #   form_placeholder: http://example.com/dataset.json
+  #   display_property: foaf:homepage
+  #   display_snippet: link.html
+
+  # - field_name: version
+  #   label: Version
+  #   validators: ignore_missing unicode package_version_validator
+  #   form_placeholder: '1.0'
+
+  # - field_name: author
+  #   label: Author
+  #   form_placeholder: Joe Bloggs
+  #   display_property: dc:creator
+
+  # - field_name: author_email
+  #   label: Author Email
+  #   form_placeholder: joe@example.com
+  #   display_property: dc:creator
+  #   display_snippet: email.html
+  #   display_email_name_field: author
+
+  # - field_name: maintainer
+  #   label: Maintainer
+  #   form_placeholder: Joe Bloggs
+  #   display_property: dc:contributor
+
+  # - field_name: maintainer_email
+  #   label: Maintainer Email
+  #   form_placeholder: joe@example.com
+  #   display_property: dc:contributor
+  #   display_snippet: email.html
+  #   display_email_name_field: maintainer
+
+resource_fields:
+  - section_heading: Add additional links?
+    form_snippet: section_heading.html
+
+  - field_name: url
+    label: URL
+    form_snippet: hack_whitespace_default.html
+    help_text: This can be skipped unless you want to add an additional documentation link
+  # - field_name: name
+  #   label: Name
+  #   form_placeholder: eg. January 2011 Gold Prices
+
+  # - field_name: description
+  #   label: Description
+  #   form_snippet: markdown.html
+  #   form_placeholder: Some useful notes about the data
+
+  # - field_name: format
+  #   label: Format
+  #   preset: resource_format_autocomplete
