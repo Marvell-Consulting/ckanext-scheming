@@ -1,7 +1,5 @@
 {# This is specific to datasets' owner_org field and won't work #}
 {# if used with other fields #}
-
-
 {% macro organization_option_tag(organization, selected_org) %}
   {% block organization_option scoped %}
     <option value="{{ organization.id }}"{%
