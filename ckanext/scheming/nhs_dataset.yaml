@@ -36,7 +36,7 @@ dataset_fields:
     label: Has the standard been published?
     help_text: Standards which have not yet been published will appear on the roadmap page
     required: true
-    preset: select
+    preset: radio
     choices:
       - value: false
         label: "No"
@@ -48,7 +48,7 @@ dataset_fields:
   - field_name: mandated
     label: Nationally Mandated
     required: true
-    preset: select
+    preset: radio
     choices:
       - value: false
         label: "No"
@@ -60,14 +60,14 @@ dataset_fields:
   - field_name: status
     label: Status of standard
     required: true
-    preset: select
+    preset: radio
     choices:
       # Published statuses
       # We keep active at the top, as ckan will default to the first option when it can't find a value. As most of our standards *are* active, we chose this!
       - value: active
         label: Active
       - value: in-development
-        label: In development
+        label: In development (APIs only)
       - value: deprecated
         label: Deprecated
       - value: retired
